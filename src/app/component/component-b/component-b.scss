@@ -1,0 +1,140 @@
+
+.container{
+position: relative;
+    width: auto;
+}
+
+.example-tree-progress-bar {
+  margin-left: 30px;
+}
+
+.example-tree-nested-node {
+  padding-left: 30px;
+}
+
+mat-tree {
+  margin-left: 40px;
+}
+.mat-tree-node {
+  padding: 0;
+  background-color: white;
+}
+
+.mat-nested-tree-node {
+  top: -24px;
+}
+
+ul, li { 
+  list-style: none; 
+  margin: 0; 
+  padding: 0;  
+}
+
+li.example-tree-container {
+  border-bottom: 0;
+}
+
+ul { 
+  padding-left: 40px; 
+}
+
+li { 
+  padding-left: 40px;
+  border: 1px dotted grey;
+  border-width: 0 0 1px 1px; 
+  position: relative;
+  top: -24px;
+}
+
+li.mat-tree-node,
+li div { 
+  margin: 0;
+  position: relative;
+  top: 24px; 
+}
+
+li ul {
+  border-top: 1px dotted grey;
+  margin-left: -40px;
+  padding-left: 60px;
+}
+
+.mat-nested-tree-node:last-child ul {
+  border-left: 1px solid white;
+  margin-left: -41px;
+}
+
+.mat-icon-button {
+  z-index: 100;
+}
+
+.left-part {
+    position: relative;
+    top: 28px;
+}
+
+button.mat-icon-button {
+background-color:white;
+}
+
+mat-card.mat-elevation-z4.mat-card {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,1), 0 1px 1px 0 rgba(0,0,0,1), 0 1px 3px 0 rgba(0,0,0,1);
+    width: 87%;
+    left: 4%;
+    position: relative;
+}
+mat-tree.mat-tree {
+    margin-top: 9px;
+}
+
+.btn-wrapper {
+    position: relative;
+    left: 1.5%;
+    width: 63%;
+}
+
+.btn-wrapper h5 {
+    display: inline;
+    font-size: 14px;
+}
+
+span.out {
+    position: relative;
+    margin-left: -10px;
+    padding: 0px 11px 0px 11px;
+}
+.btn-holder {
+    display: inline-block;
+	    width: auto;
+}
+
+button.btn.custBtn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.right-part {
+    position: relative;
+    right: 4%;
+    top: 27px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,1), 0 1px 1px 0 rgba(0,0,0,1), 0 1px 3px 0 rgba(0,0,0,1);
+}
+
+#btn1{
+    width: 29%;
+    position: relative;
+    left: 4%;
+}
+button#btn-1 {
+    position: relative;
+    left: 9%;
+    width: 23%;
+    background-color: black;
+    color: white;
+}
+
+#row{
+padding: 0px 9px 0px 9px;
+    position: relative;
+    top: 9px;
+}

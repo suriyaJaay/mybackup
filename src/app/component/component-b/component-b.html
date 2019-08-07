@@ -1,0 +1,121 @@
+<div class="btn-wrapper">
+    <h5><b>Recivable Master</b></h5>
+    <div class="btn-holder">
+        <span class="odd"><button type="button" class="btn btn-primary">New</button></span>
+        <span class="out"> <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Debit Control A/C<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+        </ul>
+        </span>
+        <span class="out"><button type="button" class="btn custBtn">Mail Sent History</button></span>
+        <span class="out"><button type="button" class="btn custBtn">Call for CRM</button></span>
+        <span class="out"><button type="button" class="btn custBtn">Search Contact Details</button></span>
+        <span class="out"><button type="button" class="btn custBtn">Map</button></span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="left-part">
+            <mat-card class="mat-elevation-z4">
+                <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                    <mat-nested-tree-node *matTreeNodeDef="let node">
+                        <li>
+                            <div class="mat-tree-node"> {{node.item}}</div>
+                    </mat-nested-tree-node>
+                    <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChildren">
+                        <li class="example-tree-container">
+                            <div class="mat-tree-node">
+                                <button mat-icon-button matTreeNodeToggle [matTreeNodeToggleRecursive]="recursive" [attr.aria-label]="'toggle ' + node.filename">
+                                    <mat-icon>
+                                        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                                    </mat-icon>
+                                </button>
+                                {{node.item}}
+                            </div>
+                            <ul class="example-tree-nested-node">
+                                <div *ngIf="treeControl.isExpanded(node)">
+                                    <ng-container matTreeNodeOutlet></ng-container>
+                                </div>
+                            </ul>
+                        </li>
+
+                    </mat-nested-tree-node>
+                </mat-tree>
+            </mat-card>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="right-part">
+            <div class="controls">
+                <div id="row" class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="form_name">A/C Code</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="form_lastname">Default Currency</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="form_email">Default Currency</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="form_name">Account Name</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="form_lastname">Arabic Name</label>
+                            <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="form_lastname">Category</label>
+                            <button type="button" id="btn1" class="btn btn-primary form-control">Account Recivable</button>
+                            <button type="button" id="btn-1" class="btn  form-control">Other Payable</button>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="form_message">Address</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label for="form_message">Ship to Address *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="container" style="border: 2px solid pink;">
+<div class="row" style="border: 2px solid brown;">
+
+</div>
+</div> -->

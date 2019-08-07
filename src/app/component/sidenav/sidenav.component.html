@@ -1,0 +1,127 @@
+<!-- <mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true" (mouseenter)="increase()"
+    (mouseleave)="decrease()">
+<mat-sidenav #sidenav mode="side" class="example-sidenav"  opened="true" >
+    <mat-nav-list>
+
+      <mat-list-item routerLink="menuA" routerLinkActive="active" >
+        <mat-icon mat-list-icon>link</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Component 1</h5>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item routerLink="menuB" routerLinkActive="active">
+        <mat-icon mat-list-icon>face</mat-icon>
+        <div fxFlex="10"></div>
+        <div *ngIf="sidenavWidth > 6" class="sidenav-item">
+          <h5>Component 2</h5>
+        </div>
+      </mat-list-item>
+     
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+
+
+</mat-sidenav-container> -->
+
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <header class="avatar">
+		<img class= "img" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />	
+		<h2 class="avatar-name">Mike Smith</h2>
+		<h4 class="nav-heading">APPLICATION</h4>
+	</header>
+   <!--  <mat-nav-list>     
+	  
+	   <mat-list-item routerLink="menuA" routerLinkActive="active" >       
+		Transaction
+      </mat-list-item>
+
+      <mat-list-item routerLink="menuB" routerLinkActive="active">        
+		Accounts
+      </mat-list-item>
+    </mat-nav-list> -->
+	
+	<mat-nav-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" routerLink="menuA" routerLinkActive="active" >
+				<span class="full-width" *ngIf="isExpanded || isShowing">Transaction</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" routerLink="menuB" routerLinkActive="active">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Accounts</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<!-- <a mat-list-item href="...">Submenu Item 1</a>
+				<a mat-list-item href="...">Submenu Item 2</a> -->
+				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+					<span class="full-width" *ngIf="isExpanded || isShowing">Account Master</span>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				</mat-list-item>
+				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+					<mat-list-item>Category </mat-list-item>
+					<mat-list-item>Accounts Tree</mat-list-item>
+					<mat-list-item>Bank Master Tree</mat-list-item>
+					<mat-list-item>Recivable Master</mat-list-item>
+					<mat-list-item>Parent Account Settings</mat-list-item>
+					<mat-list-item>Applioation Recivable </mat-list-item>
+					<mat-list-item>Application Payable</mat-list-item>
+					<mat-list-item>Application GL</mat-list-item>
+				</div>
+			</div>
+			<!-- <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Submenu Item 1</a>
+				<a mat-list-item href="...">Submenu Item 2</a>
+				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+					<span class="full-width" *ngIf="isExpanded || isShowing">Nested Menu</span>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				</mat-list-item>
+				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+					<mat-list-item>SubSubmenu Item 1</mat-list-item>
+					<mat-list-item>SubSubmenu Item 2</mat-list-item>
+				</div>
+			</div> -->
+		</mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+	  <div class="toolbar-div">
+	   <span class="margin glyphicon glyphicon-envelope"></span>
+	   <span class="margin glyphicon glyphicon-calendar"></span>
+	   <span class="margin glyphicon glyphicon-user"></span>
+	   <span class="margin glyphicon glyphicon-ok"></span>
+	   <span class="margin glyphicon glyphicon-star"></span>
+	  <span>
+	<img class= "toolbar-img" src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />	
+		<h2 class="toolbar-name">Mike Smith</h2>
+		
+		<span class="glyphicon glyphicon-search"></span>
+	</span>
+	  </div>
+    
+    </mat-toolbar> 
+	 <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

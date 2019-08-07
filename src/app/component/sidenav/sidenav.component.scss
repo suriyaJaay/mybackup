@@ -1,0 +1,127 @@
+
+.mat-drawer-content {
+    overflow-x: hidden;
+}
+mat-toolbar.mat-toolbar.mat-primary.mat-toolbar-single-row {
+    position: relative;
+}
+.sidenav-container {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sidenav {
+  width: 200px;
+  background: #000000c4;
+  color: #ffffff;
+}
+
+.sidenav .mat-toolbar {
+  background: #000000c4;
+  color: #ffffff;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.avatar{
+position: relative;
+    left: 15%;
+    top: 18px;
+    width: 75%;
+}
+
+.img{
+border-radius: 50%;
+    position: relative;
+    top: 20px;
+    width: 36%;
+}
+.avatar-name {
+  display: inline-block;
+    position: relative;
+    font-size: 16px;
+    padding: 2px 2px;
+    left: 3%;
+    top: 32px;
+}
+
+h4.nav-heading {
+    display: initial;
+    position: relative;
+    left: 6%;
+    top: 26px;
+    font-size: 13px;
+}
+
+
+mat-nav-list.mat-nav-list.mat-list-base {
+    position: relative;
+    top: 24px;
+}
+
+img.toolbar-img {
+    border-radius: 50%;
+    width: 36px;
+    position: relative;
+    top: 0px;
+    left: 67%;
+}
+
+.toolbar-div {
+    width: 100%;
+	}
+
+h2.toolbar-name {
+    font-size: 13px;
+    position: relative;
+    left: 68%;
+    display: inline;    
+    top: 0px;
+}
+
+span.glyphicon.glyphicon-search {
+    left: 69%;
+}
+.margin{
+margin-right: 11px
+}
+span.margin.glyphicon.glyphicon-star {
+    color: #c3c35c;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+  padding-left: 30px;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+
+.mat-drawer-inner-container {
+   overflow: hidden !important;
+}
+mat-nav-list.mat-nav-list.mat-list-base {
+    position: relative;
+    top: 66px;
+}
